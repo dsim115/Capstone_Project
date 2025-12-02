@@ -1,122 +1,67 @@
-﻿
-@{
-  ViewBag.Title = "Home Page";
+﻿@{
+    ViewBag.Title = "Home Page";
 }
 
-
-<!--Home body content-->
-<div class="home-content">
-    
-    <div class="home-row">
-        <div class="home-logo">
-            <img src="~/Content/images/TheatreLogo.png" />
-        </div>
-    </div>
-    
-    <div class="home-row">
-        <!--Column1 Spotlight-->
-        <div class="home-col1">
-            <div class="home-title">
-                <h3>SPOTLIGHT</h3>
-            </div>
-            <img src="~/Content/images/DollsHouse.png" />
-            <img src="~/Content/images/Tempest.png" />
-            <img src="~/Content/images/MidsummerNightDream.png" />
-            <img src="~/Content/images/macbeth.png" />
-        </div>
-        <!--Column2 Sidebar-->
-        <div class="home-col2">
-            <!--Donations-->
-            <div class="donations">
-                <div class="home-title">
-                    <h3>DONATIONS</h3>
-                </div>
-                <div class="btn-container">
-                    <button class="home-btn">Click to Support</button>
-                </div>
-            </div>
-            <div>
-                <!--Sponsors-->
-                <div class="home-title">
-                    <h3>SPONSORS</h3>
-                </div>
-                <div class="sponsors-container">
-                    <img src="~/Content/images/Sponsors/Ellyn-Bye-Logo.png" class="home-sponsors" />
-                    <img src="~/Content/images/Sponsors/LogoRoundColor.png" class="home-sponsors" />
-                    <img src="~/Content/images/Sponsors/Ninkasi-white-text.png" class="home-sponsors" />
-                    <img src="~/Content/images/Sponsors/OCF-logo-in-white-with-tagline-lg.png" class="home-sponsors" />
-                    <img src="~/Content/images/Sponsors/RACC.png" class="home-sponsors" />
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="home-row">
-        <!--Column1 Land Acknowledgement-->
-        <div class="home-col1">
-            <div class="home-title">
-                <h3>LAND ACKNOWLEDGEMENT</h3>
-            </div>
-            <div class="home-text">
-                <p>Theatre Vertigo humbly acknowledges we live and work on the unceded, traditional
-                tribal lands of the Multnomah, Wasco, Clackamas, Chinook bands, Kathlamet, Tualatin,
-                Kalapuya, Cowlitz, Mollala, Cascades, Oregon City Tumwater, Confederated Tribes of
-                the Grand Ronde and other indigenous peoples.<br /><br />
-                <span style="font-weight: bold;">We are on stolen land.</span><br /><br />
-                Theatre Vertigo has been and continues to examine our community relationships to ensure
-                our collaborators, partners and sponsors support the our reions Indegenous Nations and communities.<br /><br />
-                One of the ways Theatre Vertigo is working to act on our commitment to being of service
-                to the lands that we now share is to build bridges between our arts community and local Nations.</p>
-            </div>
-        </div>
-        <!--Column2 Link-->
-        <div class="home-col2">
-            <div class="home-acknowledgement">
-                <a href="https://nayapdx.org/" target="_blank"><img src="~/Content/images/NAYAFamilyCenter.jpg" /></a>
-                <div class="home-text">
-                    <p>Click to visit the NAYA Family Center to learn more about supporting our local indigenous communities.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<!-- Centered logo under navbar -->
+<div class="home-hero">
+    <img src="@Url.Content("~/Content/images/TheatreLogo.png")" alt="Theatre Vertigo Logo" />
 </div>
 
-    
+<div class="row home-columns">
+    <!-- LEFT: Spotlight (2/3 width) -->
+    <div class="col-md-8">
+        <h2 class="section-title">Spotlight</h2>
 
-   
+        <div class="spotlight-stack">
+            <img src="@Url.Content("~/Content/images/DollsHouse.png")" alt="A Doll's House poster" />
+            <img src="@Url.Content("~/Content/images/Tempest.png")" alt="The Tempest poster" />
+        </div>
+    </div>
 
+    <!-- RIGHT: Donations + Sponsors (1/3 width) -->
+    <div class="col-md-4">
+        <h2 class="section-title">Donations</h2>
+        <div class="donation-card">
+            <button type="button" class="btn btn-support">Click to Support</button>
+        </div>
 
+        <h2 class="section-title">Sponsors</h2>
+        <div class="sponsor-row">
+            <img src="@Url.Content("~/Content/images/Sponsors/RACC.png")" alt="RACC" />
+            <img src="@Url.Content("~/Content/images/Sponsors/OCF-logo-in-white-with-tagline-lg.png")" alt="OCF" />
+            <img src="@Url.Content("~/Content/images/Sponsors/Ninkasi-white-text.png")" alt="Ninkasi" />
+            <img src="@Url.Content("~/Content/images/Sponsors/Ellyn-Bye-Logo.png")" alt="Ellyn Bye" />
+        </div>
+    </div>
+</div>
 
+<!-- LAND ACKNOWLEDGEMENT -->
+<div class="land-ack row">
+    <div class="col-md-8">
+        <h2 class="section-title">Land Acknowledgement</h2>
 
+        <p>
+            Theatre Vertigo humbly acknowledges we live and work on the unceded, traditional tribal lands of the
+            Multnomah, Wasco, Clackamas, Chinook bands, Kathlamet, Tualatin Kalapuya, Cowlitz, Molalla, Cascades,
+            Oregon City Tumwater, Confederated Tribes of the Grand Ronde and other Indigenous peoples.
+        </p>
+        <p>We are on stolen land.</p>
+        <p>
+            Theatre Vertigo has been and continues to examine our community relationships to ensure our collaborators,
+            partners and sponsors support the region’s Indigenous Nations and communities.
+        </p>
+        <p>
+            One of the ways Theatre Vertigo is working to act on our commitment to being of service to the lands that
+            we now share is to build bridges between our arts community and local Nations.
+        </p>
+    </div>
 
-
-
-
-
-
-
-
-
-
-@*<div class="row">
-  <div class="col-md-4">
-      <h2>Getting started</h2>
-   <p>
-              ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-              enables a clean separation of concerns and gives you full control over markup
-              for enjoyable, agile development.
-          </p>
-          <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-          <h2>Get more libraries</h2>
-          <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-          <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-          <h2>Web Hosting</h2>
-          <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-          <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-      </div>
-  </div>*@
+    <div class="col-md-4 text-center">
+        <a href="https://nayapdx.org/" target="_blank" rel="noopener">
+            <img class="land-img" src="@Url.Content("~/Content/images/NAYAFamilyCenter.jpg")" alt="NAYA Family Center" />
+        </a>
+        <div class="naya-caption">
+            Click to visit the NAYA Family Center to learn more about supporting our local Indigenous communities.
+        </div>
+    </div>
+</div>

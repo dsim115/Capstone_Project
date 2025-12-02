@@ -10,11 +10,7 @@ namespace TheatreCMS3.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-
-        {
-            return View();
-        }
+        public ActionResult Index() => View();
         [HttpGet]
         public ActionResult About()
         {
@@ -23,27 +19,13 @@ namespace TheatreCMS3.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            
-            return View();
-        }
+        public ActionResult Contact() => View();
 
-        public ActionResult SuccessMessage()
-        {
-            return View();
-        }
+        public ActionResult SuccessMessage() => View();
 
-        public ActionResult SignIn()
-        {
+        public ActionResult SignIn() => View();
 
-            return View();
-        }
-
-        public ActionResult Donate()
-        {
-            return View();
-        }
+        public ActionResult Donate() => View();
 
     }
 }

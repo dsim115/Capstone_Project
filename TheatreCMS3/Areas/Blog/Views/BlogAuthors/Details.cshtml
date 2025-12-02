@@ -1,13 +1,11 @@
 ﻿@model TheatreCMS3.Areas.Blog.ViewModels.BlogAuthorViewModel
+@using TheatreCMS3.Helpers
 
 @{
     ViewData["Title"] = "Author Details";
 }
 
-<!-- Link to external Blog.css file for styling -->
 <link rel="stylesheet" href="~/Content/Areas/Blog.css" />
-
-<!-- Font Awesome CDN for social media icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
 
 <div class="author-details-card">
@@ -36,7 +34,7 @@
     </div>
     <div class="author-details">
         <img src="@Model.BlogPhoto" alt="Author Image" class="author-image" />
-        <p>@Model.BlogAuthor.Bio</p>
+        <p>@TextHelpers.CharacterLimit(Model.BlogAuthor.Bio, 150)</p>
     </div>
 
     <div id="authorDetails">
@@ -52,7 +50,7 @@
                 {
                     <li class="post-item">
                         <h4>@post.Title</h4>
-                        <p>@post.Description</p>
+                        <p>@TextHelpers.CharacterLimit(post.Description, 100)</p>
                         <img src="@post.BlogPhoto" alt="Post Image" />
                     </li>
                 }

@@ -12,13 +12,10 @@ namespace TheatreCMS3.Areas.Rent
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
-        {
-            context.MapRoute(
+        public override void RegisterArea(AreaRegistrationContext context) => context.MapRoute(
                 "Rent_default",
                 "Rent/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
-        }
     }
 }

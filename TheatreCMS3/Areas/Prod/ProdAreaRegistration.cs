@@ -12,13 +12,10 @@ namespace TheatreCMS3.Areas.Prod
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
-        {
-            context.MapRoute(
+        public override void RegisterArea(AreaRegistrationContext context) => context.MapRoute(
                 "Prod_default",
                 "Prod/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
-        }
     }
 }

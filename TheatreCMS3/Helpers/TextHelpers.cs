@@ -1,16 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace TheatreCMS3.Helpers
 {
-    public class TextHelpers
+    public static class TextHelpers
     {
         public static string CharacterLimit(string content, int numbOfCharacters)
         {
-            var truncated = content.Substring(0, numbOfCharacters) + "...";
-            return truncated;
+            // Null check
+            if (string.IsNullOrEmpty(content))
+                return content;
+
+            // If the content is already shorter than the limit, return as-is
+            if (content.Length <= numbOfCharacters)
+                return content;
+
+            // Make sure we don't try to substring too short
+            if (numbOfCharacters <= 3)
+                return "...";
+
+            // Truncate and add ellipses
+            return content.Substring(0, numbOfCharacters - 3) + "...";
         }
     }
 }

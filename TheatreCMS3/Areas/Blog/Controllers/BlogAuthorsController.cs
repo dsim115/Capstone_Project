@@ -17,10 +17,7 @@ namespace TheatreCMS3.Areas.Blog.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Blog/BlogAuthors
-        public ActionResult Index()
-        {
-            return View(db.BlogAuthors.ToList());
-        }
+        public ActionResult Index() => View(db.BlogAuthors.ToList());
 
         // GET: Blog/BlogAuthors/Details/5
         public ActionResult Details(int? id)
@@ -66,10 +63,7 @@ namespace TheatreCMS3.Areas.Blog.Controllers
         }
 
         // GET: Blog/BlogAuthors/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        public ActionResult Create() => View();
 
         // POST: Blog/BlogAuthors/Create
         [HttpPost]

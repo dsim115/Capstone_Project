@@ -465,3 +465,192 @@ footer {
 }
 
 /*  END SignIn page styling */
+
+/* ===== Home page custom styles ===== */
+.section-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 20px 0 12px;
+}
+
+.home-hero {
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+    .home-hero img {
+        max-width: 360px; /* keep the logo a nice size */
+        width: 100%;
+        height: auto;
+    }
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-up poster grid on desktop */
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .spotlight-grid {
+        grid-template-columns: 1fr; /* 1-up on phones */
+    }
+}
+
+.spotlight-grid img,
+.sponsor-logos img,
+.land-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.donation-box {
+    background: #f7f7f7;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+}
+
+.sponsor-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+    .sponsor-logos img {
+        background: #fff;
+        padding: 8px;
+        border: 1px solid #eee;
+        border-radius: 6px;
+    }
+
+.land-ack {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+}
+
+/* ===== Match Tech Academy mock ===== */
+
+/* Dark theme */
+body {
+    background: #000;
+    color: #ddd;
+}
+
+a {
+    color: #f05a49;
+}
+
+/* Centered hero logo */
+.home-hero {
+    text-align: center;
+    margin: 32px 0 48px;
+}
+
+    .home-hero img {
+        max-width: 420px;
+        width: 100%;
+        height: auto;
+    }
+
+/* Two-column spacing */
+.home-columns {
+    margin-top: 10px;
+}
+
+/* Section titles with red underline (Oswald font already loaded) */
+.section-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .3px;
+    margin: 0 0 14px;
+    position: relative;
+}
+
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #f05a49; /* red accent */
+        border-radius: 2px;
+        margin-top: 6px;
+    }
+
+/* Spotlight: stack two big posters */
+.spotlight-stack img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 22px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+
+/* Donations */
+.donation-card {
+    background: #101010;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 22px;
+}
+
+.btn-support {
+    display: block;
+    width: 100%;
+    background: #e84a32;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+
+    .btn-support:hover {
+        background: #d43f2a;
+    }
+
+/* Sponsors: compact row like the mock */
+.sponsor-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+    .sponsor-row img {
+        height: 42px; /* even height */
+        object-fit: contain;
+        background: #000; /* keep transparent logos clean */
+        padding: 0;
+    }
+
+/* Land Acknowledgement block */
+.land-ack {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid #2a2a2a;
+}
+
+    .land-ack p {
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+.land-img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.naya-caption {
+    color: #ccc;
+    font-size: .9rem;
+    margin-top: 8px;
+}

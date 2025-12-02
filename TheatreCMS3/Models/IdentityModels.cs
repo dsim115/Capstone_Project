@@ -1,33 +1,43 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+using TheatreCMS3.Areas.Blog.Models;   // for BlogAuthor
 
 namespace TheatreCMS3.Models
 {
-    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
+    // =======================
+    // ApplicationUser
+    // =======================
     public class ApplicationUser : IdentityUser
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
+            var userIdentity = await manager.CreateIdentityAsync(
+                this,
+                DefaultAuthenticationTypes.ApplicationCookie);
+
+            // Add custom claims here if needed
             return userIdentity;
         }
     }
 
+    // =======================
+    // ApplicationDbContext
+    // =======================
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        // IMPORTANT: this runs BEFORE any context is used
+        // and tells EF to DROP + RECREATE if the model changes.
+        static ApplicationDbContext()
         {
+            Database.SetInitializer(
+                new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
         }
 
-        public ApplicationDbContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        public ApplicationDbContext()
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
@@ -36,17 +46,9 @@ namespace TheatreCMS3.Models
             return new ApplicationDbContext();
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+        // Your tables
+        public DbSet<BlogAuthor> BlogAuthors { get; set; }
 
-        }
-
-        public System.Data.Entity.DbSet<TheatreCMS3.Areas.Blog.Models.BlogAuthor> BlogAuthors { get; set; }
-        /* ▼ Put DbSet's for your models below ▼ */
-
-
-
-
+        // Add more DbSet<T> here for other models
     }
 }

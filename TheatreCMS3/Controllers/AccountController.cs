@@ -190,10 +190,7 @@ namespace TheatreCMS3.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View();
-        }
+        public ActionResult Register() => View();
 
         //
         // POST: /Account/Register
@@ -241,10 +238,7 @@ namespace TheatreCMS3.Controllers
         //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
-        public ActionResult ForgotPassword()
-        {
-            return View();
-        }
+        public ActionResult ForgotPassword() => View();
 
         //
         // POST: /Account/ForgotPassword
@@ -277,18 +271,12 @@ namespace TheatreCMS3.Controllers
         //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
-        public ActionResult ForgotPasswordConfirmation()
-        {
-            return View();
-        }
+        public ActionResult ForgotPasswordConfirmation() => View();
 
         //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
-        public ActionResult ResetPassword(string code)
-        {
-            return code == null ? View("Error") : View();
-        }
+        public ActionResult ResetPassword(string code) => code == null ? View("Error") : View();
 
         //
         // POST: /Account/ResetPassword
@@ -319,21 +307,16 @@ namespace TheatreCMS3.Controllers
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
-        public ActionResult ResetPasswordConfirmation()
-        {
-            return View();
-        }
+        public ActionResult ResetPasswordConfirmation() => View();
 
         //
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult ExternalLogin(string provider, string returnUrl)
-        {
+        public ActionResult ExternalLogin(string provider, string returnUrl) =>
             // Request a redirect to the external login provider
-            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
-        }
+            new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
 
         //
         // GET: /Account/SendCode
@@ -451,10 +434,7 @@ namespace TheatreCMS3.Controllers
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
-        public ActionResult ExternalLoginFailure()
-        {
-            return View();
-        }
+        public ActionResult ExternalLoginFailure() => View();
 
         protected override void Dispose(bool disposing)
         {

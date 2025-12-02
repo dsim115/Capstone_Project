@@ -12,13 +12,10 @@ namespace TheatreCMS3.Areas.Blog
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
-        {
-            context.MapRoute(
+        public override void RegisterArea(AreaRegistrationContext context) => context.MapRoute(
                 "Blog_default",
                 "Blog/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
-        }
     }
 }
